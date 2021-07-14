@@ -43,6 +43,8 @@ spark_worker_init_packages <- function(sc, context) {
     worker_log("updated .libPaths with bundle packages")
   }
   else {
+    stop("HERE")
+    assert(FALSE)
     spark_env <- worker_invoke_static(sc, "org.apache.spark.SparkEnv", "get")
     spark_libpaths <- worker_invoke(worker_invoke(spark_env, "conf"), "get", "spark.r.libpaths", NULL)
     if (!is.null(spark_libpaths)) {
