@@ -19,7 +19,6 @@ spark_worker_context <- function(sc) {
 
 spark_worker_init_packages <- function(sc, context) {
   bundlePath <- worker_invoke(context, "getBundlePath")
-  assert(FALSE)
 
   if (nchar(bundlePath) > 0) {
     bundleName <- basename(bundlePath)
